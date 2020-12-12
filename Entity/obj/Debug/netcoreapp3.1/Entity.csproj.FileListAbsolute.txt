@@ -1,0 +1,9 @@
+C:\proyectos\LuckyERP\Entity\bin\Debug\netcoreapp3.1\Entity.deps.json
+C:\proyectos\LuckyERP\Entity\bin\Debug\netcoreapp3.1\Entity.dll
+C:\proyectos\LuckyERP\Entity\bin\Debug\netcoreapp3.1\Entity.pdb
+C:\proyectos\LuckyERP\Entity\obj\Debug\netcoreapp3.1\Entity.csprojAssemblyReference.cache
+C:\proyectos\LuckyERP\Entity\obj\Debug\netcoreapp3.1\Entity.AssemblyInfoInputs.cache
+C:\proyectos\LuckyERP\Entity\obj\Debug\netcoreapp3.1\Entity.AssemblyInfo.cs
+C:\proyectos\LuckyERP\Entity\obj\Debug\netcoreapp3.1\Entity.csproj.CoreCompileInputs.cache
+C:\proyectos\LuckyERP\Entity\obj\Debug\netcoreapp3.1\Entity.dll
+C:\proyectos\LuckyERP\Entity\obj\Debug\netcoreapp3.1\Entity.pdb

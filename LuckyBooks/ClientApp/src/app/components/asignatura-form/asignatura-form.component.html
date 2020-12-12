@@ -1,0 +1,51 @@
+<div class="col-md-6 offset-md-3" >
+    <div class="header-app" style="margin-top:15px">
+        <h3>Gestión de {{appName}}</h3>
+      
+      </div>
+      
+            <form action="">
+                <div class="form-group">
+                    <mat-form-field style="width: 100%;">
+  
+                        <mat-label>Codigo</mat-label>
+                    
+                        <input matInput type="number" [(ngModel)]="asignatura.nId_asig" [ngModelOptions]="{standalone: true}">
+                        <button mat-button *ngIf="asignatura.nId_asig" matSuffix mat-icon-button aria-label="Clear" (click)="asignatura.nId_asig=''">
+                          <mat-icon>close</mat-icon>
+                        </button>
+                      </mat-form-field>
+                    
+                </div>
+
+                <div class="form-group">
+                    <mat-form-field style="width: 100%;">
+  
+                        <mat-label>Nombre Asignatura</mat-label>
+                    
+                        <input matInput type="text" [(ngModel)]="asignatura.cDescripcion" [ngModelOptions]="{standalone: true}">
+                        <button mat-button *ngIf="asignatura.cDescripcion" matSuffix mat-icon-button aria-label="Clear" (click)="asignatura.cDescripcion=''">
+                          <mat-icon>close</mat-icon>
+                        </button>
+                      </mat-form-field>
+                    
+                </div>
+
+                <div class="form-group">
+                    <mat-form-field class="selectStock" appearance="fill" style="width: 100%;">
+                        <mat-label>Estado</mat-label>
+                        <mat-select [(ngModel)]="asignatura.bEstado" [ngModelOptions]="{standalone: true}">
+                          <mat-option *ngFor="let bEstado of estados" [value]="bEstado.value">
+                            {{bEstado.viewValue}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+
+                </div>
+              
+                <button class="btn btn-success btn-block" (click)="edit ? updateAsignatura() : saveNewAsignatura()">
+                    Guardar
+                </button>
+            </form>
+      
+</div>
