@@ -4,7 +4,8 @@ import {ILibro, IStock} from '../../Models/LibrosModel';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { LibrosService } from '../../services/libros/libros.service';
-
+import { HttpParams } from '@angular/common/http';
+import {MatDialog} from '@angular/material/dialog';
 
 
 @Component({
@@ -30,6 +31,21 @@ export class LibroListComponent implements OnInit {
     { value: 3, viewValue: 'Sin Stock' }
   ];
 
+
+  libro:ILibro={
+    Id_libro:0,
+    cDescripcion:'',
+    cAsignatura:'',
+    bStock: 1
+  }
+
+  /* paramsFiltro = new HttpParams()
+  .set('cDescripcion', this.libro.cDescripcion)
+  .set('cAsignatura', this.libro.cAsignatura).
+  set('bStock',this.libro.bStock);
+  
+ */
+
   getLibros(){
     this.librosService.getLibros().subscribe(
       (res:any)=>{
@@ -40,9 +56,7 @@ export class LibroListComponent implements OnInit {
         this.dataSource.sort=this.sort;
       },
       err=>console.error(err)
-      
     )
-    
   }
 
   deleteLibro(id: number){
@@ -58,10 +72,34 @@ export class LibroListComponent implements OnInit {
     
   }
 
+  getLibrosFiltro(){
+    this.librosService.postLibrosFiltro(this.libro).subscribe(
+      (res:any)=>{
+        this.libros=res;
+        this.dataSource=new MatTableDataSource(res);
+        this.dataSource.sort=this.sort;
+      },
+      err=>console.error(err)
+    )
+  }
+
   ngOnInit() {
 
     this.getLibros();
    
   }
 
+}
+
+//Dialog mover a la clase de arriba
+export class DialogContentExample {
+  constructor(public dialog: MatDialog) {}
+
+  openDialog() {
+    const dialogRef = this.dialog.open(LibroListComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }

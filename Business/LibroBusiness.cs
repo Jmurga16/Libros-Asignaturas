@@ -14,9 +14,14 @@ namespace Business
             return libroData.LIS_LibroData();
         }
 
-        public List<LibroEntity> LIS_OneBusiness(int id_libro)
+        public List<LibroEntity> LIS_LibroFiltroBusiness(LibroEntity objLibrosEnt)
         {
-            return libroData.LIS_OneData(id_libro);
+            return libroData.LIS_LibroFiltroData(objLibrosEnt);
+        }
+
+        public List<LibroEntity> LIS_LibroUnicoBusiness(int id_libro)
+        {
+            return libroData.LIS_LibroUnicoData(id_libro);
         }
 
         public String CREATE_LibroBusiness(LibroEntity objLibrosEnt)

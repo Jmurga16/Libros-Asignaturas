@@ -8,8 +8,8 @@
    
       <mat-label>Nombre</mat-label>
   
-      <input matInput type="text" [(ngModel)]="cDescripcion">
-        <button mat-button *ngIf="cDescripcion" matSuffix mat-icon-button aria-label="Clear" (click)="cDescripcion=''">
+      <input matInput type="text" [(ngModel)]="libro.cDescripcion">
+        <button mat-button *ngIf="libro.cDescripcion" matSuffix mat-icon-button aria-label="Clear" (click)="libro.cDescripcion=''">
           <mat-icon>close</mat-icon>
         </button>
       </mat-form-field>
@@ -19,8 +19,8 @@
     
         <mat-label>Asignatura</mat-label>
     
-        <input matInput type="text" [(ngModel)]="cAsignatura">
-        <button mat-button *ngIf="cAsignatura" matSuffix mat-icon-button aria-label="Clear" (click)="cAsignatura=''">
+        <input matInput type="text" [(ngModel)]="libro.cAsignatura">
+        <button mat-button *ngIf="libro.cAsignatura" matSuffix mat-icon-button aria-label="Clear" (click)="libro.cAsignatura=''">
           <mat-icon>close</mat-icon>
         </button>
       </mat-form-field>
@@ -28,7 +28,7 @@
     <div class="col-md-2">
       <mat-form-field class="selectStock" appearance="fill">
         <mat-label>Disponibilidad</mat-label>
-        <mat-select [(value)]="selected">
+        <mat-select  [(ngModel)]="libro.bStock">
           <mat-option *ngFor="let bStock of stocks" [value]="bStock.value">
             {{bStock.viewValue}}
           </mat-option>
@@ -38,7 +38,7 @@
       <div class="col-md-3">
         <div class="example-button-row botones ">
             
-          <button mat-raised-button [disabled]="Editable" (click)="MostrarTodosLibros">Consultar</button>
+          <button mat-raised-button [disabled]="Editable" (click)="getLibrosFiltro()">Consultar</button>
           <a routerLink="/libros/agregar">
           <button mat-raised-button [disabled]="Editable"  color="primary">Agregar</button>
             </a>
@@ -89,3 +89,14 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+<!-- 
+  <mat-dialog-content class="mat-typography">
+    <h3>Develop across all platforms</h3>
+    <p>¿Desea eliminar {{hola}}?</p>
+  
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close>Cancel</button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+  </mat-dialog-actions>
+   -->

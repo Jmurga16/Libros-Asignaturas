@@ -1,5 +1,5 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { IAsignatura, IEstado } from 'src/app/Models/AsignaturasModel';
+import { IAsignatura, IEstado, IAsignaturaEdit } from 'src/app/Models/AsignaturasModel';
 import { ActivatedRoute, Router } from '@angular/router'
 import { AsignaturasService } from '../../services/asignaturas/asignaturas.service';
 
@@ -16,18 +16,24 @@ export class AsignaturaFormComponent implements OnInit {
   appName: string = 'Asignaturas';
 
   estados: IEstado[] = [
-    { value: 1, viewValue: 'Activo' },
-    { value: 0, viewValue: 'Inactivo' },
+    { value: true, viewValue: 'Activo' },
+    { value: false, viewValue: 'Inactivo' },
 
   ];
   
   asignatura:IAsignatura={
     id_asig:0,
     descripcion:'',
-    estado:false,
+    estado:true,
     nId_asig:0,
     cDescripcion:'',
     bEstado:false,
+  }
+
+  asignaturaEdit:IAsignaturaEdit={
+    id_asig:0,
+    descripcion: '',
+    estado:true
   }
 
   edit:boolean=false;
@@ -39,7 +45,7 @@ export class AsignaturaFormComponent implements OnInit {
   saveNewAsignatura(){
     //console.log(this.asignatura)
     //eliminar datos al guardar :
-    delete this.asignatura.id_asig;
+    //delete this.asignatura.id_asig;
     
     //fin eliminar datos
     this.asignaturasService.saveAsignatura(this.asignatura)
@@ -54,6 +60,34 @@ export class AsignaturaFormComponent implements OnInit {
   }
 
   ngOnInit() {
+    const params = this.activatedRoute.snapshot.params;
+
+    if(params.id){
+      this.asignaturasService.getAsignaturaUnica(params.id).subscribe(
+        (res:any)=>{  
+          this.asignaturaEdit=res;
+          console.log(this.asignatura)
+          this.asignatura.id_asig=this.asignaturaEdit[0].id_asig;
+          this.asignatura.descripcion=this.asignaturaEdit[0].descripcion;
+          this.asignatura.estado=this.asignaturaEdit[0].estado;
+
+          this.edit=true;
+        
+        },
+        err=>console.error(err)
+      );
+      }
+  }
+
+  updateAsignatura(){
+      
+    this.asignaturasService.updateAsignatura(this.asignatura.id_asig,this.asignatura)
+      .subscribe(
+        res=>{
+          this.router.navigate(['/asignaturas']); 
+        },
+        err=>this.router.navigate(['/asignaturas'])
+      );
   }
 
 }

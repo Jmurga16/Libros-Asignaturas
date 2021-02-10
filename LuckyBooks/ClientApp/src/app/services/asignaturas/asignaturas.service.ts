@@ -11,15 +11,18 @@ export class AsignaturasService {
   API_URI='https://localhost:44302/api'
   constructor( private http:HttpClient) { }
 
-  //getAsignaturas():Observable<any>{
-   // return this.http.get<any>('api/asignaturas')
-  //}
+
   getAsignaturas(){
     return this.http.get(`${this.API_URI}/asignaturas`)
   }
 
-  getAsignatura(id:string){
-    return this.http.get(`${this.API_URI}/asignaturas/${id}`);
+  getAsignaturaUnica(id:string){
+    return this.http.get(`${this.API_URI}/asignaturas/editar/${id}`);
+  }
+
+  postAsignaturasFiltro(asignatura: IAsignatura)
+  {
+    return this.http.post(`${this.API_URI}/asignaturas/filtrar`,asignatura);
   }
 
   deleteAsignatura(id:number){

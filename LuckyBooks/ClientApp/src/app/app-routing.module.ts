@@ -29,6 +29,10 @@ const routes:Routes=[
   },{
     path:'asignaturas/agregar',
     component:AsignaturaFormComponent
+  },
+  {
+    path:'asignaturas/editar/:id',
+    component:AsignaturaFormComponent
   }
 ];
 

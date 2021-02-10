@@ -18,8 +18,9 @@ namespace LuckyBooks.Controllers
             return View();
         }
 
+        //Obtener Todas las asignaturas
         [HttpGet]
-        public List<AsignaturaEntity> LIS_Libros()
+        public List<AsignaturaEntity> LIS_Asignaturas()
         {
             List<AsignaturaEntity> lstAsignaturas = new List<AsignaturaEntity>();
             try
@@ -34,15 +35,15 @@ namespace LuckyBooks.Controllers
             return lstAsignaturas;
         }
 
-        [Route("id")]
+        //Obtener uno para editar
+        [Route("editar/{id}")]
         [HttpGet]
-        public List<AsignaturaEntity> LIS_Libros(AsignaturaEntity objLibroEnt)
+        public List<AsignaturaEntity> LIS_AsignaturaUnica(int id)
         {
             List<AsignaturaEntity> lstAsignaturas = new List<AsignaturaEntity>();
             try
             {
-                lstAsignaturas = objAsignaturas.LIS_AsignaturaBusiness();
-
+                lstAsignaturas = objAsignaturas.LIS_AsignaturaUnicaBusiness(id);
             }
             catch (Exception)
             {
@@ -51,16 +52,35 @@ namespace LuckyBooks.Controllers
             return lstAsignaturas;
         }
 
+        //Obtener con filtros
+        [Route("filtrar")]
         [HttpPost]
-        public String CREATE_Game(AsignaturaEntity objLibroEnt)
+        public List<AsignaturaEntity> LIS_AsignaturasFiltro(AsignaturaEntity objAsigEnt)
+        {
+            List<AsignaturaEntity> lstAsignaturas = new List<AsignaturaEntity>();
+            try
+            {
+                lstAsignaturas = objAsignaturas.LIS_AsignaturaFiltroBusiness(objAsigEnt);
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return lstAsignaturas;
+        }
+
+        //Crear Asignaturas
+        [HttpPost]
+        public String CREATE_Asignatura(AsignaturaEntity objAsigEnt)
         {
 
-            AsignaturaEntity libEnt = new AsignaturaEntity();
+            //AsignaturaEntity asigEnt = new AsignaturaEntity();
             string strGame = "";
 
             try
             {
-                strGame = objAsignaturas.CREATE_AsignaturaBusiness(objLibroEnt);
+                strGame = objAsignaturas.CREATE_AsignaturaBusiness(objAsigEnt);
             }
             catch (Exception)
             {
@@ -69,17 +89,18 @@ namespace LuckyBooks.Controllers
             return strGame;
         }
 
-        [Route("id")]
+        //Editar Asignaturas
+        [Route("{id}")]
         [HttpPut]
-        public String UPDATE_Game(AsignaturaEntity objLibroEnt)
+        public String UPDATE_Asignatura(int id, AsignaturaEntity objAsigEnt)
         {
 
-            AsignaturaEntity libEnt = new AsignaturaEntity();
+            //AsignaturaEntity asigEnt = new AsignaturaEntity();
             string strGame = "";
 
             try
             {
-                strGame = objAsignaturas.UPDATE_AsignaturaBusiness(objLibroEnt);
+                strGame = objAsignaturas.UPDATE_AsignaturaBusiness(id, objAsigEnt);
 
             }
             catch (Exception)
@@ -89,12 +110,13 @@ namespace LuckyBooks.Controllers
             return strGame;
         }
 
+        //Eliminar Asignaturas
         [Route("{id}")]
         [HttpDelete]
-        public bool DELETE_Game(int id)
+        public bool DELETE_Asignatura(int id)
         {
 
-            AsignaturaEntity libEnt = new AsignaturaEntity();
+            AsignaturaEntity asigEnt = new AsignaturaEntity();
             bool bRes;
 
             try

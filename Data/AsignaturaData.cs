@@ -12,10 +12,11 @@ namespace Data
     public class AsignaturaData
     {
         private string conf;
+
+        //Construir la conexión
         public string ConfConexion()
         {
 
-            //Construir la conexión
             try
             {
                 var builder = new ConfigurationBuilder()
@@ -33,7 +34,7 @@ namespace Data
             return conf;
         }
 
-
+        //Obtener Todas las asignaturas
         public List<AsignaturaEntity> LIS_AsignaturaData()
         {
 
@@ -74,6 +75,49 @@ namespace Data
             return lstAsignatura;
         }
 
+        //Obtener una asignatura por id
+        public List<AsignaturaEntity> LIS_AsignaturaUnicaData(int id_asignatura)
+        {
+
+            List<AsignaturaEntity> lstAsignatura = new List<AsignaturaEntity>();
+
+            try
+            {
+                string cOpcion = "06";
+                ConfConexion();
+
+                var conn = new SqlConnection(conf);
+                conn.Open();
+
+                SqlCommand _Command = new SqlCommand("USP_MNT_Asignaturas", conn);
+                _Command.CommandType = CommandType.StoredProcedure;
+                _Command.Parameters.Add(new SqlParameter("@cOpcion", cOpcion));
+                _Command.Parameters.Add(new SqlParameter("@bEstado", null));
+                _Command.Parameters.Add(new SqlParameter("@nId_asig", id_asignatura));
+                SqlDataReader reader = _Command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    AsignaturaEntity asigEnt = new AsignaturaEntity();
+
+                    asigEnt.id_asig = Convert.ToInt32(reader["id_asig"]);
+                    asigEnt.descripcion = reader["descripcion"].ToString();
+                    asigEnt.estado = Convert.ToBoolean(reader["estado"]);
+
+                    lstAsignatura.Add(asigEnt);
+                }
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
+
+            return lstAsignatura;
+        }
+
+        //Obtener asignatura por filtros
         public List<AsignaturaEntity> LIS_AsignaturaFiltroData(AsignaturaEntity objAsignaturaEnt)
         {
 
@@ -119,10 +163,11 @@ namespace Data
             return lstAsignatura;
         }
 
+        //Crear asignatura
         public String CREATE_AsignaturaData(AsignaturaEntity objAsignaturaEnt)
         {
             String strResultado = "";
-            //string cOpcion = "01";
+            string cOpcion = "01";
             try
             {
                 ConfConexion();
@@ -133,7 +178,7 @@ namespace Data
                 SqlCommand _Command = new SqlCommand("USP_MNT_Asignaturas", conn);
 
                 _Command.CommandType = CommandType.StoredProcedure;
-                _Command.Parameters.Add(new SqlParameter("@cOpcion", objAsignaturaEnt.cOpcion));
+                _Command.Parameters.Add(new SqlParameter("@cOpcion", cOpcion));
                 _Command.Parameters.Add(new SqlParameter("@nId_asig", objAsignaturaEnt.id_asig));
                 _Command.Parameters.Add(new SqlParameter("@cDescripcion", objAsignaturaEnt.descripcion));
                 _Command.Parameters.Add(new SqlParameter("@bEstado", objAsignaturaEnt.estado));
@@ -154,10 +199,11 @@ namespace Data
             return strResultado;
         }
 
-        public String UPDATE_AsignaturaData(AsignaturaEntity objAsignaturaEnt)
+        //Actualizar asignatura
+        public String UPDATE_AsignaturaData(int id_asig, AsignaturaEntity objAsignaturaEnt)
         {
             String strResultado = "";
-            //string cOpcion = "04";
+            string cOpcion = "04";
             try
             {
                 ConfConexion();
@@ -167,8 +213,8 @@ namespace Data
                 SqlCommand _Command = new SqlCommand("USP_MNT_Asignaturas", conn);
 
                 _Command.CommandType = CommandType.StoredProcedure;
-                _Command.Parameters.Add(new SqlParameter("@cOpcion", objAsignaturaEnt.cOpcion));
-                _Command.Parameters.Add(new SqlParameter("@nId_asig", objAsignaturaEnt.id_asig));
+                _Command.Parameters.Add(new SqlParameter("@cOpcion", cOpcion));
+                _Command.Parameters.Add(new SqlParameter("@nId_asig", id_asig));
                 _Command.Parameters.Add(new SqlParameter("@cDescripcion", objAsignaturaEnt.descripcion));
                 _Command.Parameters.Add(new SqlParameter("@bEstado", objAsignaturaEnt.estado));
 
@@ -188,6 +234,7 @@ namespace Data
             return strResultado;
         }
 
+        //Eliminar asignatura
         public bool DELETE_AsignaturaData(int id_asig)
         {
             string cOpcion = "05";

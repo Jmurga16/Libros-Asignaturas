@@ -9,6 +9,13 @@ export interface IAsignatura{
 }
 
 export interface IEstado{
-    value: number;
+    value: boolean;
     viewValue: string;
+}
+
+export interface IAsignaturaEdit{
+    id_asig?:number;
+    descripcion?:string;
+    estado?:boolean;
+    bEstado?:boolean
 }

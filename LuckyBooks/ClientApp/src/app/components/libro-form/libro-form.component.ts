@@ -18,7 +18,7 @@ export class LibroFormComponent implements OnInit {
   asignaturas:any=[];
 
   prueba:any=[];
-  //options:any=[];
+  //opciones:any=[];
 
   options: IStock[]   = [
     { value: 201, viewValue: 'Computacion' },
@@ -32,7 +32,8 @@ export class LibroFormComponent implements OnInit {
     descripcion:'',
     asignatura:'',
     cAsignatura:'',
-    stock: 0
+    stock: 0,
+    nId_asig:0
   }
 
   libroEdit:ILibroEdit={
@@ -40,7 +41,6 @@ export class LibroFormComponent implements OnInit {
     descripcion:'',
     nId_asig:0,
     stock:0
-
   }
 
   edit:boolean=false;
@@ -71,14 +71,14 @@ export class LibroFormComponent implements OnInit {
         (res:any)=>{     
           this.asignaturas=res;
           console.log(res);
-       /*    for (let i in this.asignaturas) {
-            this.options=[new Option(this.asignaturas[i].nId_asig,this.asignaturas[i].cDescripcion)]
-          } */
         },
         err=>console.error(err)
         
       )
     }
+
+
+
   ngOnInit(): void {
     const params = this.activatedRoute.snapshot.params;
     this.getAsignaturas();

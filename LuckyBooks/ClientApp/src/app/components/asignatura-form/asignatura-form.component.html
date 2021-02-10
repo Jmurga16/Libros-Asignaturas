@@ -10,8 +10,8 @@
   
                         <mat-label>Codigo</mat-label>
                     
-                        <input matInput type="number" [(ngModel)]="asignatura.nId_asig" [ngModelOptions]="{standalone: true}">
-                        <button mat-button *ngIf="asignatura.nId_asig" matSuffix mat-icon-button aria-label="Clear" (click)="asignatura.nId_asig=''">
+                        <input matInput type="number" [(ngModel)]="asignatura.id_asig" [ngModelOptions]="{standalone: true}">
+                        <button mat-button *ngIf="asignatura.id_asig" matSuffix mat-icon-button aria-label="Clear" (click)="asignatura.id_asig=''">
                           <mat-icon>close</mat-icon>
                         </button>
                       </mat-form-field>
@@ -23,8 +23,8 @@
   
                         <mat-label>Nombre Asignatura</mat-label>
                     
-                        <input matInput type="text" [(ngModel)]="asignatura.cDescripcion" [ngModelOptions]="{standalone: true}">
-                        <button mat-button *ngIf="asignatura.cDescripcion" matSuffix mat-icon-button aria-label="Clear" (click)="asignatura.cDescripcion=''">
+                        <input matInput type="text" [(ngModel)]="asignatura.descripcion" [ngModelOptions]="{standalone: true}">
+                        <button mat-button *ngIf="asignatura.descripcion" matSuffix mat-icon-button aria-label="Clear" (click)="asignatura.descripcion=''">
                           <mat-icon>close</mat-icon>
                         </button>
                       </mat-form-field>
@@ -34,7 +34,7 @@
                 <div class="form-group">
                     <mat-form-field class="selectStock" appearance="fill" style="width: 100%;">
                         <mat-label>Estado</mat-label>
-                        <mat-select [(ngModel)]="asignatura.bEstado" [ngModelOptions]="{standalone: true}">
+                        <mat-select [(ngModel)]="asignatura.estado" [ngModelOptions]="{standalone: true}">
                           <mat-option *ngFor="let bEstado of estados" [value]="bEstado.value">
                             {{bEstado.viewValue}}
                           </mat-option>

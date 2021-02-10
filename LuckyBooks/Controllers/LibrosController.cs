@@ -18,6 +18,7 @@ namespace LuckyBooks.Controllers
             return View();
         }
 
+        //Obtener Todos los libros
         [HttpGet]
         public List<LibroEntity> LIS_Libros()
         {
@@ -34,14 +35,15 @@ namespace LuckyBooks.Controllers
             return lstLibros;
         }
 
+        //Obtener uno para editar
         [Route("editar/{id}")]
         [HttpGet]
-        public List<LibroEntity> LIS_One(int id)
+        public List<LibroEntity> LIS_LibroUnico(int id)
         {
             List<LibroEntity> lstLibros = new List<LibroEntity>();
             try
             {
-                lstLibros = objLibros.LIS_OneBusiness(id);
+                lstLibros = objLibros.LIS_LibroUnicoBusiness(id);
 
             }
             catch (Exception)
@@ -51,48 +53,50 @@ namespace LuckyBooks.Controllers
             return lstLibros;
         }
 
-        [Route("id")]
-        [HttpGet]
-        public List<LibroEntity> LIS_Libros(LibroEntity objLibroEnt)
-        {
-            List<LibroEntity> lstLibros = new List<LibroEntity>();
-            try
-            {
-                lstLibros = objLibros.LIS_LibroBusiness();
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            return lstLibros;
-        }
-
- 
+        //Obtener con filtros
+        [Route("filtrar")]
         [HttpPost]
-        public String CREATE_Game(LibroEntity objLibroEnt)
+        public List<LibroEntity> LIS_LibrosFiltro(LibroEntity objLibroEnt)
         {
-
-            LibroEntity libEnt = new LibroEntity();
-            string strGame = "";
-
+            List<LibroEntity> lstLibros = new List<LibroEntity>();
             try
             {
-                strGame = objLibros.CREATE_LibroBusiness(objLibroEnt);
+                lstLibros = objLibros.LIS_LibroFiltroBusiness(objLibroEnt);
+
             }
             catch (Exception)
             {
                 throw;
             }
-            return strGame;
+            return lstLibros;
         }
 
+        //Crear Libros
+        [HttpPost]
+        public String CREATE_Libro(LibroEntity objLibroEnt)
+        {
+
+            //LibroEntity libEnt = new LibroEntity();
+            string strLibro = "";
+
+            try
+            {
+                strLibro = objLibros.CREATE_LibroBusiness(objLibroEnt);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return strLibro;
+        }
+
+        //Editar Libro
         [Route("{id}")]
         [HttpPut]
-        public String UPDATE_Game(int id, LibroEntity objLibroEnt)
+        public String UPDATE_Libro(int id, LibroEntity objLibroEnt)
         {
 
-            LibroEntity libEnt = new LibroEntity();
+            //LibroEntity libEnt = new LibroEntity();
             string strGame = "";
 
             try
@@ -107,12 +111,13 @@ namespace LuckyBooks.Controllers
             return strGame;
         }
 
+        //Eliminar Libro
         [Route("{id}")]
         [HttpDelete]
-        public bool DELETE_Game(int id)
+        public bool DELETE_Libro(int id)
         {
 
-            LibroEntity libEnt = new LibroEntity();
+           // LibroEntity libEnt = new LibroEntity();
             bool bRes;
 
             try

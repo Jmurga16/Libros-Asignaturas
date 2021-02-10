@@ -19,10 +19,17 @@ export class AsignaturaListComponent implements OnInit {
   constructor(private asignaturasService: AsignaturasService) { }
   
   estados: IEstado[] = [
-    { value: 1, viewValue: 'Activo' },
-    { value: 0, viewValue: 'Inactivo' },
+    { value: true, viewValue: 'Activo' },
+    { value: false, viewValue: 'Inactivo' },
 
   ];
+
+  asignatura: IAsignatura={
+    id_asig:0,
+    descripcion:'',
+    estado:true
+  } 
+  
 
   dataSource: MatTableDataSource<any>;
   displayedColumns: string[] = ['id_asig', 'descripcion', 'estado', 'Acciones'];
@@ -55,6 +62,16 @@ export class AsignaturaListComponent implements OnInit {
     
   }
 
+  getAsignaturasFiltro(){
+    this.asignaturasService.postAsignaturasFiltro(this.asignatura).subscribe(
+      (res:any)=>{
+        this.asignaturas=res;
+        this.dataSource=new MatTableDataSource(res);
+        this.dataSource.sort=this.sort;
+      },
+      err=>console.error(err)
+    )
+  }
 
   ngOnInit() {
     this.getAsignaturas();

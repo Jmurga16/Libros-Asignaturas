@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {ILibro} from '../../Models/LibrosModel';
 import { Observable } from 'rxjs';
 
@@ -9,6 +9,8 @@ import { Observable } from 'rxjs';
 export class LibrosService {
 
   API_URI='https://localhost:44302/api'
+  
+
   
   constructor( private http:HttpClient) { }
 
@@ -21,6 +23,11 @@ export class LibrosService {
 
   getOne(id:string){
     return this.http.get(`${this.API_URI}/libros/editar/${id}`);
+  }
+
+  postLibrosFiltro(libro: ILibro)
+  {
+    return this.http.post(`${this.API_URI}/libros/filtrar`,libro);
   }
 
   deleteLibro(id:number){

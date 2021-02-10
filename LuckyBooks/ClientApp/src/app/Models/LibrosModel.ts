@@ -7,6 +7,7 @@ export interface ILibro{
     nId_asig?:number;
     cDescripcion?:string;
     nStock?:number;
+    bStock?:number
 }
 
 export interface IStock{

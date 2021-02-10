@@ -24,6 +24,8 @@ import {AsignaturasService} from './services/asignaturas/asignaturas.service'
 //Material Modules
 
 import {MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDialogModule} from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -57,6 +59,8 @@ import { MatTableModule } from '@angular/material/table'
     FormsModule,
     AppRoutingModule,
     MatButtonModule,
+    MatCheckboxModule,
+    MatDialogModule,
     MatSelectModule,
     MatSidenavModule,
     MatListModule,

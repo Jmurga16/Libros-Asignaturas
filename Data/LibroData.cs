@@ -32,7 +32,7 @@ namespace Data
             return conf;
         }
 
-
+        //Obtener Todos los libros
         public List<LibroEntity> LIS_LibroData()
         {
 
@@ -76,7 +76,8 @@ namespace Data
             return lstLibros;
         }
 
-        public List<LibroEntity> LIS_OneData(int id_libro)
+        //Obtener un libro por id
+        public List<LibroEntity> LIS_LibroUnicoData(int id_libro)
         {
 
             List<LibroEntity> lstLibros = new List<LibroEntity>();
@@ -120,6 +121,7 @@ namespace Data
             return lstLibros;
         }
 
+        //Obtener libro por filtros
         public List<LibroEntity> LIS_LibroFiltroData(LibroEntity objLibroEnt)
         {
 
@@ -167,6 +169,7 @@ namespace Data
             return lstLibros;
         }
 
+        //Crear libro
         public String CREATE_LibroData(LibroEntity objLibroEnt)
         {
             String strResultado = "";
@@ -203,6 +206,7 @@ namespace Data
             return strResultado;
         }
 
+        //Actualizar libro
         public String UPDATE_LibroData(int id_libro,LibroEntity objLibroEnt)
         {
             String strResultado = "";
@@ -238,6 +242,7 @@ namespace Data
             return strResultado;
         }
 
+        //Eliminar libro
         public bool DELETE_LibroData(int id_libro)
         {
             string cOpcion = "05";
