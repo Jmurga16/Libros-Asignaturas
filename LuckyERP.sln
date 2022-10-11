@@ -13,12 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuckyBooks", "LuckyBooks\Lu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{C7DABDE1-2EEF-4EC6-974E-5567AB461833}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\Users\Jose\Desktop\Scripts\LibrosLucky.sql = ..\..\..\Users\Jose\Desktop\Scripts\LibrosLucky.sql
-		..\..\..\Users\Jose\Desktop\Scripts\ManualSQL.txt = ..\..\..\Users\Jose\Desktop\Scripts\ManualSQL.txt
-		..\..\..\Users\Jose\Desktop\Scripts\PobladoDatos.sql = ..\..\..\Users\Jose\Desktop\Scripts\PobladoDatos.sql
 		Scripts\ScriptSQL.sql = Scripts\ScriptSQL.sql
-		..\..\..\Users\Jose\Desktop\Scripts\USP_MNT_Asignaturas.sql = ..\..\..\Users\Jose\Desktop\Scripts\USP_MNT_Asignaturas.sql
-		..\..\..\Users\Jose\Desktop\Scripts\USP_MNT_Libros.sql = ..\..\..\Users\Jose\Desktop\Scripts\USP_MNT_Libros.sql
 	EndProjectSection
 EndProject
 Global
