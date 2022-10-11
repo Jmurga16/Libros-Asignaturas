@@ -3,13 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{67F93C0D-589D-4AE2-8CC3-4F555B118EDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{67F93C0D-589D-4AE2-8CC3-4F555B118EDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{DB33C67C-E3F2-4983-995D-0ACDDB4902CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{DB33C67C-E3F2-4983-995D-0ACDDB4902CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{B3657854-0591-43B8-A3ED-2A9C43B543F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entity", "Entity\Entity.csproj", "{B3657854-0591-43B8-A3ED-2A9C43B543F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuckyBooks", "LuckyBooks\LuckyBooks.csproj", "{05074BA0-B74A-48EC-AA41-55AD0AEA120B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuckyBooks", "LuckyBooks\LuckyBooks.csproj", "{05074BA0-B74A-48EC-AA41-55AD0AEA120B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{C7DABDE1-2EEF-4EC6-974E-5567AB461833}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Users\Jose\Desktop\Scripts\LibrosLucky.sql = ..\..\..\Users\Jose\Desktop\Scripts\LibrosLucky.sql
+		..\..\..\Users\Jose\Desktop\Scripts\ManualSQL.txt = ..\..\..\Users\Jose\Desktop\Scripts\ManualSQL.txt
+		..\..\..\Users\Jose\Desktop\Scripts\PobladoDatos.sql = ..\..\..\Users\Jose\Desktop\Scripts\PobladoDatos.sql
+		..\..\..\Users\Jose\Desktop\Scripts\USP_MNT_Asignaturas.sql = ..\..\..\Users\Jose\Desktop\Scripts\USP_MNT_Asignaturas.sql
+		..\..\..\Users\Jose\Desktop\Scripts\USP_MNT_Libros.sql = ..\..\..\Users\Jose\Desktop\Scripts\USP_MNT_Libros.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

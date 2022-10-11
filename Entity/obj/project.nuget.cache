@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZWihQw/53A4nNT2lccnIfG09+Iy8Vk2aOJRPqcIyucEgh6zwv5X6HnGoLzozg78zL2+QidN9Ks6/YpGowxOdtQ==",
+  "dgSpecHash": "c1xEotfopcZdofyYHCy3hyRCr67FtaVRjBA3gLB1gAhoTOGfCnpo9h3jeiktkZAFz3+Y1vnn6MhFtf2xXFiNOA==",
   "success": true,
-  "projectFilePath": "C:\\proyectos\\LuckyERP\\Entity\\Entity.csproj",
+  "projectFilePath": "C:\\proyectos\\GitHub\\LuckyERP\\Entity\\Entity.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

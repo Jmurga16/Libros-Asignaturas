@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\proyectos\\LuckyERP\\Business\\Business.csproj": {}
+    "C:\\proyectos\\GitHub\\LuckyERP\\Business\\Business.csproj": {}
   },
   "projects": {
-    "C:\\proyectos\\LuckyERP\\Business\\Business.csproj": {
+    "C:\\proyectos\\GitHub\\LuckyERP\\Business\\Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\proyectos\\LuckyERP\\Business\\Business.csproj",
+        "projectUniqueName": "C:\\proyectos\\GitHub\\LuckyERP\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "C:\\proyectos\\LuckyERP\\Business\\Business.csproj",
-        "packagesPath": "C:\\Users\\josem\\.nuget\\packages\\",
-        "outputPath": "C:\\proyectos\\LuckyERP\\Business\\obj\\",
+        "projectPath": "C:\\proyectos\\GitHub\\LuckyERP\\Business\\Business.csproj",
+        "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
+        "outputPath": "C:\\proyectos\\GitHub\\LuckyERP\\Business\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\josem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,17 +26,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://iccorpiconstruye.pkgs.visualstudio.com/_packaging/ICCorp/nuget/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\proyectos\\LuckyERP\\Data\\Data.csproj": {
-                "projectPath": "C:\\proyectos\\LuckyERP\\Data\\Data.csproj"
+              "C:\\proyectos\\GitHub\\LuckyERP\\Data\\Data.csproj": {
+                "projectPath": "C:\\proyectos\\GitHub\\LuckyERP\\Data\\Data.csproj"
               },
-              "C:\\proyectos\\LuckyERP\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\proyectos\\LuckyERP\\Entity\\Entity.csproj"
+              "C:\\proyectos\\GitHub\\LuckyERP\\Entity\\Entity.csproj": {
+                "projectPath": "C:\\proyectos\\GitHub\\LuckyERP\\Entity\\Entity.csproj"
               }
             }
           }
@@ -61,21 +66,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\proyectos\\LuckyERP\\Data\\Data.csproj": {
+    "C:\\proyectos\\GitHub\\LuckyERP\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\proyectos\\LuckyERP\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\proyectos\\GitHub\\LuckyERP\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\proyectos\\LuckyERP\\Data\\Data.csproj",
-        "packagesPath": "C:\\Users\\josem\\.nuget\\packages\\",
-        "outputPath": "C:\\proyectos\\LuckyERP\\Data\\obj\\",
+        "projectPath": "C:\\proyectos\\GitHub\\LuckyERP\\Data\\Data.csproj",
+        "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
+        "outputPath": "C:\\proyectos\\GitHub\\LuckyERP\\Data\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\josem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -83,14 +92,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://iccorpiconstruye.pkgs.visualstudio.com/_packaging/ICCorp/nuget/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\proyectos\\LuckyERP\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\proyectos\\LuckyERP\\Entity\\Entity.csproj"
+              "C:\\proyectos\\GitHub\\LuckyERP\\Entity\\Entity.csproj": {
+                "projectPath": "C:\\proyectos\\GitHub\\LuckyERP\\Entity\\Entity.csproj"
               }
             }
           }
@@ -133,21 +143,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\proyectos\\LuckyERP\\Entity\\Entity.csproj": {
+    "C:\\proyectos\\GitHub\\LuckyERP\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\proyectos\\LuckyERP\\Entity\\Entity.csproj",
+        "projectUniqueName": "C:\\proyectos\\GitHub\\LuckyERP\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\proyectos\\LuckyERP\\Entity\\Entity.csproj",
-        "packagesPath": "C:\\Users\\josem\\.nuget\\packages\\",
-        "outputPath": "C:\\proyectos\\LuckyERP\\Entity\\obj\\",
+        "projectPath": "C:\\proyectos\\GitHub\\LuckyERP\\Entity\\Entity.csproj",
+        "packagesPath": "C:\\Users\\Jose\\.nuget\\packages\\",
+        "outputPath": "C:\\proyectos\\GitHub\\LuckyERP\\Entity\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\josem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jose\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -155,7 +169,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://iccorpiconstruye.pkgs.visualstudio.com/_packaging/ICCorp/nuget/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -187,7 +202,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -7,3 +7,13 @@ C:\proyectos\LuckyERP\Entity\obj\Debug\netcoreapp3.1\Entity.AssemblyInfo.cs
 C:\proyectos\LuckyERP\Entity\obj\Debug\netcoreapp3.1\Entity.csproj.CoreCompileInputs.cache
 C:\proyectos\LuckyERP\Entity\obj\Debug\netcoreapp3.1\Entity.dll
 C:\proyectos\LuckyERP\Entity\obj\Debug\netcoreapp3.1\Entity.pdb
+C:\proyectos\GitHub\LuckyERP\Entity\bin\Debug\netcoreapp3.1\Entity.deps.json
+C:\proyectos\GitHub\LuckyERP\Entity\bin\Debug\netcoreapp3.1\Entity.dll
+C:\proyectos\GitHub\LuckyERP\Entity\bin\Debug\netcoreapp3.1\Entity.pdb
+C:\proyectos\GitHub\LuckyERP\Entity\obj\Debug\netcoreapp3.1\Entity.csproj.AssemblyReference.cache
+C:\proyectos\GitHub\LuckyERP\Entity\obj\Debug\netcoreapp3.1\Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\proyectos\GitHub\LuckyERP\Entity\obj\Debug\netcoreapp3.1\Entity.AssemblyInfoInputs.cache
+C:\proyectos\GitHub\LuckyERP\Entity\obj\Debug\netcoreapp3.1\Entity.AssemblyInfo.cs
+C:\proyectos\GitHub\LuckyERP\Entity\obj\Debug\netcoreapp3.1\Entity.csproj.CoreCompileInputs.cache
+C:\proyectos\GitHub\LuckyERP\Entity\obj\Debug\netcoreapp3.1\Entity.dll
+C:\proyectos\GitHub\LuckyERP\Entity\obj\Debug\netcoreapp3.1\Entity.pdb
