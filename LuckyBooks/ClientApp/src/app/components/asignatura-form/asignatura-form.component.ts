@@ -89,5 +89,10 @@ export class AsignaturaFormComponent implements OnInit {
         err=>this.router.navigate(['/asignaturas'])
       );
   }
+  
+
+  fnRouterBack(){
+    this.router.navigate(['/asignaturas']); 
+  }
 
 }

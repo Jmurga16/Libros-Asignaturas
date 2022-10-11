@@ -138,11 +138,9 @@ namespace Data
                 SqlCommand _Command = new SqlCommand("USP_MNT_Libros", conn);
                 _Command.CommandType = CommandType.StoredProcedure;
                 _Command.Parameters.Add(new SqlParameter("@cOpcion", cOpcion));
-                //_Command.Parameters.Add(new SqlParameter("@nId_asig", objLibroEnt.nId_asig));
                 _Command.Parameters.Add(new SqlParameter("@cDescripcion", objLibroEnt.cDescripcion));
                 _Command.Parameters.Add(new SqlParameter("@cAsignatura", objLibroEnt.cAsignatura));
                 _Command.Parameters.Add(new SqlParameter("@bStock", objLibroEnt.bStock));
-                //_Command.Parameters.Clear();
 
                 SqlDataReader reader = _Command.ExecuteReader();
 

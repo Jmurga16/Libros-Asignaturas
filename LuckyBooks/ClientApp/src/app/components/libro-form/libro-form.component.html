@@ -1,51 +1,54 @@
+<div class="col-md-6 offset-md-3">
+  <div class="header-app" style="margin-top:15px">
+    <h3>Gestión de {{appName}}</h3>
 
-<div class="col-md-6 offset-md-3" >
-    <div class="header-app" style="margin-top:15px">
-        <h3>Gestión de {{appName}}</h3>
-      
-      </div>
-      
-            <form action="">
-                <div class="form-group">
-                    <mat-form-field style="width: 100%;">
-  
-                        <mat-label>Nombre</mat-label>
-                    
-                        <input matInput type="text" [(ngModel)]="libro.cDescripcion" [ngModelOptions]="{standalone: true}">
-                        <button mat-button *ngIf="libro.descripcion" matSuffix mat-icon-button aria-label="Clear" (click)="libro.descripcion=''">
-                          <mat-icon>close</mat-icon>
-                        </button>
-                      </mat-form-field>
-                    
-                </div>
-                <div class="form-group">
-                    <mat-form-field class="selectStock" appearance="fill" style="width: 100%;">
-                        <mat-label>Asignatura</mat-label>
-                        <mat-select [(ngModel)]="libro.nId_asig" [ngModelOptions]="{standalone: true}">
-                          <mat-option *ngFor="let option of asignaturas" [value]="option.id_asig">
-                            {{option.descripcion}}
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field>
+  </div>
 
-                </div>
-                <div class="form-group">
+  <form action="">
+    <div class="form-group">
+      <mat-form-field style="width: 100%;">
 
-                    <mat-form-field style="width: 100%;">
-  
-                        <mat-label>Stock</mat-label>
-                    
-                        <input matInput type="number" [(ngModel)]="libro.nStock" [ngModelOptions]="{standalone: true}">
-                        <button mat-button *ngIf="libro.stock" matSuffix mat-icon-button aria-label="Clear" (click)="libro.stock=''">
-                          <mat-icon>close</mat-icon>
-                        </button>
-                      </mat-form-field>
+        <mat-label>Nombre</mat-label>
 
-                    
-                </div>
-                <button class="btn btn-success btn-block" (click)="edit ? updateLibro() : saveNewLibro()">
-                    Guardar
-                </button>
-            </form>
-      
+        <input matInput type="text" [(ngModel)]="libro.cDescripcion" [ngModelOptions]="{standalone: true}">
+        <button mat-button *ngIf="libro.descripcion" matSuffix mat-icon-button aria-label="Clear"
+          (click)="libro.descripcion=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+    </div>
+    <div class="form-group">
+      <mat-form-field class="selectStock" appearance="fill" style="width: 100%;">
+        <mat-label>Asignatura</mat-label>
+        <mat-select [(ngModel)]="libro.nId_asig" [ngModelOptions]="{standalone: true}">
+          <mat-option *ngFor="let option of asignaturas" [value]="option.id_asig">
+            {{option.descripcion}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+    <div class="form-group">
+
+      <mat-form-field style="width: 100%;">
+
+        <mat-label>Stock</mat-label>
+
+        <input matInput type="number" [(ngModel)]="libro.nStock" [ngModelOptions]="{standalone: true}">
+        <button mat-button *ngIf="libro.stock" matSuffix mat-icon-button aria-label="Clear" (click)="libro.stock=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+
+    </div>
+    <button class="btn btn-success btn-block" (click)="edit ? updateLibro() : saveNewLibro()">
+      Guardar
+    </button>
+    <button class="btn btn-danger btn-block" (click)="fnRouterBack()">
+      Atras
+    </button>
+  </form>
+
 </div>

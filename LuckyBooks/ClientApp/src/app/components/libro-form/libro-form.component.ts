@@ -111,6 +111,9 @@ export class LibroFormComponent implements OnInit {
         );
     }
 
+    fnRouterBack(){
+      this.router.navigate(['/libros']); 
+    }
 
 
 }

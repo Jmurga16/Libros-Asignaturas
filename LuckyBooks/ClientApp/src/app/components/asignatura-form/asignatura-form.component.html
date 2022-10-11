@@ -1,51 +1,56 @@
-<div class="col-md-6 offset-md-3" >
-    <div class="header-app" style="margin-top:15px">
-        <h3>Gestión de {{appName}}</h3>
-      
-      </div>
-      
-            <form action="">
-                <div class="form-group">
-                    <mat-form-field style="width: 100%;">
-  
-                        <mat-label>Codigo</mat-label>
-                    
-                        <input matInput type="number" [(ngModel)]="asignatura.id_asig" [ngModelOptions]="{standalone: true}">
-                        <button mat-button *ngIf="asignatura.id_asig" matSuffix mat-icon-button aria-label="Clear" (click)="asignatura.id_asig=''">
-                          <mat-icon>close</mat-icon>
-                        </button>
-                      </mat-form-field>
-                    
-                </div>
+<div class="col-md-6 offset-md-3">
+  <div class="header-app" style="margin-top:15px">
+    <h3>Gestión de {{appName}}</h3>
 
-                <div class="form-group">
-                    <mat-form-field style="width: 100%;">
-  
-                        <mat-label>Nombre Asignatura</mat-label>
-                    
-                        <input matInput type="text" [(ngModel)]="asignatura.descripcion" [ngModelOptions]="{standalone: true}">
-                        <button mat-button *ngIf="asignatura.descripcion" matSuffix mat-icon-button aria-label="Clear" (click)="asignatura.descripcion=''">
-                          <mat-icon>close</mat-icon>
-                        </button>
-                      </mat-form-field>
-                    
-                </div>
+  </div>
 
-                <div class="form-group">
-                    <mat-form-field class="selectStock" appearance="fill" style="width: 100%;">
-                        <mat-label>Estado</mat-label>
-                        <mat-select [(ngModel)]="asignatura.estado" [ngModelOptions]="{standalone: true}">
-                          <mat-option *ngFor="let bEstado of estados" [value]="bEstado.value">
-                            {{bEstado.viewValue}}
-                          </mat-option>
-                        </mat-select>
-                      </mat-form-field>
+  <form action="">
+    <div class="form-group">
+      <mat-form-field style="width: 100%;">
 
-                </div>
-              
-                <button class="btn btn-success btn-block" (click)="edit ? updateAsignatura() : saveNewAsignatura()">
-                    Guardar
-                </button>
-            </form>
-      
+        <mat-label>Codigo</mat-label>
+
+        <input matInput type="number" [(ngModel)]="asignatura.id_asig" [ngModelOptions]="{standalone: true}">
+        <button mat-button *ngIf="asignatura.id_asig" matSuffix mat-icon-button aria-label="Clear"
+          (click)="asignatura.id_asig=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+    </div>
+
+    <div class="form-group">
+      <mat-form-field style="width: 100%;">
+
+        <mat-label>Nombre Asignatura</mat-label>
+
+        <input matInput type="text" [(ngModel)]="asignatura.descripcion" [ngModelOptions]="{standalone: true}">
+        <button mat-button *ngIf="asignatura.descripcion" matSuffix mat-icon-button aria-label="Clear"
+          (click)="asignatura.descripcion=''">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+    </div>
+
+    <div class="form-group">
+      <mat-form-field class="selectStock" appearance="fill" style="width: 100%;">
+        <mat-label>Estado</mat-label>
+        <mat-select [(ngModel)]="asignatura.estado" [ngModelOptions]="{standalone: true}">
+          <mat-option *ngFor="let bEstado of estados" [value]="bEstado.value">
+            {{bEstado.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+
+    <button class="btn btn-success btn-block" (click)="edit ? updateAsignatura() : saveNewAsignatura()">
+      Guardar
+    </button>
+    <button class="btn btn-danger btn-block" (click)="fnRouterBack()">
+      Atras
+    </button>
+  </form>
+
 </div>
